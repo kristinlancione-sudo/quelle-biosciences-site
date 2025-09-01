@@ -3,190 +3,632 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quelle BioSciences Inc. - The Source of Skincare Innovation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>QAxion Biosciences - The Source of Skincare Innovation</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            color: #1a202c;
-            background-color: #f7fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
         }
+
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 20px;
         }
-        .text-gradient {
-            background-image: linear-gradient(to right, #6366f1, #3b82f6);
+
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: #000;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
             -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             background-clip: text;
-            color: transparent;
         }
-        .text-area-with-handle {
-          resize: vertical; /* Allows vertical resizing */
-          min-height: 100px;
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero .highlight {
+            background: linear-gradient(45deg, #00d4ff, #0099ff, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: #00d4ff;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #000;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: rgba(0, 212, 255, 0.05);
+            margin: 60px 0;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .stats h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+
+        .about h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+        }
+
+        .about-content {
+            display: grid;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .about-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .about-card strong {
+            color: #00d4ff;
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .technology h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tech-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-card {
+            background: rgba(0, 212, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #000;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            color: #00d4ff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-text {
+            color: #64748b;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-100 antialiased">
-
-    <!-- Navigation Bar -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-indigo-500">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 19.014M15.042 21.672L13.384 15.684M15.042 21.672L12.001 12.672M12 2.25L12 21m9 2.25l-3.384-1.218M11.998 12.672L10.518 10.371M11.998 12.672L10.58 12.012M11.998 12.672L9.006 12M12 2.25L12 21m6.012-19.141l-1.42 5.792M15.042 21.672L13.684 19.014M15.042 21.672L13.384 15.684M15.042 21.672L12.001 12.672M12 2.25L12 21m-2.25 1.141l-1.42-5.792M6.012 21.672L7.371 19.014M6.012 21.672L8.012 15.684M6.012 21.672L9.006 12M12 2.25L12 21m-2.25 1.141l-1.42-5.792M6.012 21.672L7.371 19.014M6.012 21.672L8.012 15.684M6.012 21.672L9.006 12M6.012 21.672L9.006 12M12 2.25L12 21m-2.25 1.141l-1.42-5.792" />
-                </svg>
-                <span class="text-xl font-bold text-gray-800">Quelle BioSciences Inc.</span>
-            </a>
-            <nav class="hidden md:flex space-x-8 text-gray-600 font-medium">
-                <a href="#about" class="hover:text-indigo-500 transition duration-300">About Us</a>
-                <a href="#technology" class="hover:text-indigo-500 transition duration-300">Our Technology</a>
-                <a href="#contact" class="hover:text-indigo-500 transition duration-300">Contact</a>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-icon">Q</div>
+                    <div>
+                        <div class="logo-text">QAxion</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">Biosciences</div>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-white py-24 md:py-32 rounded-b-3xl shadow-lg">
-        <div class="container mx-auto text-center px-6">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900">
-                The <span class="text-gradient">Source</span> of Skincare Innovation
-            </h1>
-            <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                Quelle BioSciences is pioneering a new generation of cosmetic formulations through synergistic science and advanced light-management technology. We are the spring from which future skincare flows.
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="#technology" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-lg">
-                    Explore Our Patent Pending Technology
-                </a>
-                <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-indigo-600 text-base font-medium rounded-full text-indigo-600 bg-white hover:bg-gray-50 transition duration-300 transform hover:scale-105 shadow-md">
-                    Contact Us
-                </a>
+    <section class="hero">
+        <div class="container">
+            <h1><span class="highlight">The Source</span><br>of Skincare Innovation</h1>
+            <p>QAxion Biosciences has achieved what the industry deemed impossible: solving the methylene blue challenge to unlock a new era of high-performance, elegant skincare formulations.</p>
+            <p class="tagline">"We are the spring from which future skincare flows"</p>
+            <div class="hero-buttons">
+                <a href="#technology" class="btn btn-primary">Explore Our Technology</a>
+                <a href="#contact" class="btn btn-secondary">Partner With Us</a>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 md:py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800">About Quelle BioSciences Inc.</h2>
-            <div class="mt-12 max-w-4xl mx-auto text-center">
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    For decades, the luxury skincare industry faced an intractable scientific barrier: methylene blue, celebrated for its powerful cosmetic potential, was irrevocably excluded from elegant formulations due to its intense chromophore—a molecule so brilliantly blue it irreparably stained skin, textiles, and surfaces. Despite its transformative potential, the molecule’s fundamental instability and unavoidable transfer rendered it a technological dead end, a fact universally accepted by chemists and formulators worldwide. This challenge was an accepted reality until Quelle BioSciences Inc. developed a patent pending solution that finally enabled its use.
-                </p>
-                <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-                    Under the singular vision and scientific expertise of our founder and CEO, Kristin Lancione Miller, Quelle BioSciences has not only solved this problem but has set a new standard for cosmetic science. Our provisional patent outlines a synergistic composition that achieves an 85% reduction in fabric transfer and a 3.2x greater retention of the active ingredient on the skin. This breakthrough delivers the full potency of a powerful molecule in a formula that is truly colorless and elegant. We have effectively redefined what is possible in the world of high-performance skincare.
-                </p>
-                <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-                    Quelle BioSciences Inc., led by founder and CEO Kristin Lancione Miller, redefines cosmetic science through pioneering synergistic polymer-dye interactions and advanced light-management systems. Protected by patent pending technology, our innovative platform delivers unmatched stability, elegance, and efficacy, seamlessly integrating potent actives with non-staining, high-performance aesthetics. Backed by rigorous scientific validation, Quelle sets the global benchmark for premium skincare and is poised to lead the industry in next-generation cosmetic innovation.
-                </p>
+    <!-- Stats Section -->
+    <div class="container">
+        <section class="stats">
+            <h2>Revolutionary Breakthrough</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <h3>Staining Reduction</h3>
+                    <p>Eliminates fabric transfer through molecular binding innovation</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3.2x</div>
+                    <h3>Enhanced Retention</h3>
+                    <p>Superior bioavailability through zeta potential optimization</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <h3>Innovation Potential</h3>
+                    <p>Limitless applications in next-generation cosmetics</p>
+                </div>
             </div>
+        </section>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Redefining What's Possible</h2>
+            <p class="about-subtitle">The methylene blue paradox, solved through breakthrough science</p>
             
-            <div class="mt-12 max-w-4xl mx-auto text-center">
-                <h3 class="text-2xl font-bold text-gray-800">About the Founder and CEO</h3>
-                <p class="mt-4 text-lg text-gray-600 leading-relaxed">
-                    Kristin Lancione Miller, Founder and CEO of Quelle BioSciences, is a visionary leader and proven strategist renowned for a new class of cosmetic technologies. Her approach to innovation is rooted in a unique ability to merge advanced chemistry, acute market insight, and a relentless drive to solve complex challenges. This methodology directly led to the invention and global patent pending of Quelle's synergistic light-management platform. By redefining the boundaries of modern skincare, her leadership has positioned Quelle BioSciences as an intellectual and industry vanguard, continually advancing our portfolio of proprietary technologies to deliver uncompromising performance in every formulation.
-                </p>
+            <div class="about-content">
+                <div class="about-card">
+                    <p>For decades, the luxury skincare industry faced an intractable scientific barrier: <strong>methylene blue</strong>, celebrated for its transformative potential, was excluded from premium formulations due to fundamental stability and aesthetic challenges. This limitation was universally accepted—until now.</p>
+                </div>
+                
+                <div class="about-card">
+                    <p><strong>QAxion Biosciences</strong> has achieved what the industry deemed impossible. Under the visionary leadership of founder and CEO <strong>Kristin Lancione Miller</strong>, we've developed breakthrough technology that transforms this powerful molecule into elegant, high-performance formulations that meet the highest aesthetic and efficacy standards.</p>
+                </div>
+                
+                <div class="about-card">
+                    <h3 style="color: #00d4ff; margin-bottom: 1rem;">Visionary Leadership</h3>
+                    <p>Kristin Lancione Miller represents a new class of scientific entrepreneur, merging advanced chemistry with market insight and relentless innovation. Her breakthrough methodology has positioned QAxion at the forefront of next-generation cosmetic science, delivering solutions that redefine industry possibilities.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Technology Section -->
-    <section id="technology" class="bg-white py-20 md:py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800">Our Patent Pending Synergistic Technology</h2>
-            <p class="mt-4 text-lg text-center text-gray-600 max-w-3xl mx-auto">
-                Our patent pending technology combines three key pillars to deliver unprecedented results.
-            </p>
-            <div class="mt-12 grid md:grid-cols-3 gap-8">
-                <!-- Card 1: Synergistic Complex -->
-                <div class="bg-gray-50 rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-                    <div class="flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mx-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-indigo-600">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l-3.25-3.25m3.25 3.25l3.25-3.25m-3.25 3.25v6.5m0 0a2.25 2.25 0 01-4.5 0V7.5a2.25 2.25 0 014.5 0v3.75z" />
-                        </svg>
-                    </div>
-                    <h3 class="mt-6 text-xl font-bold text-center text-gray-800">The MB:Polymer Complex</h3>
-                    <p class="mt-4 text-gray-600 text-center">
-                        We have discovered a critical synergistic interaction between methylene blue and specific cationic polymers. This complexation reduces free dye migration by 85%, eliminating staining and ensuring the active stays where it's needed.
-                    </p>
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <h2>Advanced Technology Platform</h2>
+            <p class="tech-subtitle">Three pillars of breakthrough innovation</p>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">MB</div>
+                    <h3>Advanced Molecular Engineering</h3>
+                    <p>Our proprietary approach addresses the fundamental challenges that have historically limited methylene blue's use in premium cosmetic formulations, enabling unprecedented stability and performance.</p>
+                    <div class="tech-badge">Patent-Pending Innovation</div>
                 </div>
-
-                <!-- Card 2: Light Management -->
-                <div class="bg-gray-50 rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-blue-600">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8.25 12h.01M15.75 12h.01M18.75 12h.01M12 6h.01M8.25 6h.01M15.75 6h.01M18.75 6h.01" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
-                        </svg>
-                    </div>
-                    <h3 class="mt-6 text-xl font-bold text-center text-gray-800">Advanced Light-Management</h3>
-                    <p class="mt-4 text-gray-600 text-center">
-                        Our proprietary system uses micronized titanium dioxide and iron oxides to achieve a clear, non-tinted look on skin. This technology ensures the product is aesthetically neutral while maintaining full efficacy.
-                    </p>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">◊</div>
+                    <h3>Aesthetic Optimization</h3>
+                    <p>Revolutionary formulation technology that achieves complete aesthetic neutrality while preserving full molecular efficacy, meeting the highest standards of luxury skincare.</p>
+                    <div class="tech-badge">Proprietary Technology</div>
                 </div>
-
-                <!-- Card 3: Enhanced Deposition -->
-                <div class="bg-gray-50 rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-                    <div class="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mx-auto">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-purple-600">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12a.75.75 0 01.75-.75h15a.75.75 0 01.75.75v6a.75.75 0 01-.75.75H4.5a.75.75 0 01-.75-.75v-6zM3.75 6a.75.75 0 01.75-.75h7.5a.75.75 0 01.75.75v4.5a.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V6z" />
-                        </svg>
-                    </div>
-                    <h3 class="mt-6 text-xl font-bold text-center text-gray-800">Optimized Bioavailability</h3>
-                    <p class="mt-4 text-gray-600 text-center">
-                        By controlling the zeta potential of our formulations, we enhance the skin's substantivity. Our technology achieves 3.2x greater retention of methylene blue, ensuring maximum benefits with minimal application.
-                    </p>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">⚡</div>
+                    <h3>Enhanced Performance</h3>
+                    <p>Advanced delivery systems that maximize bioavailability and skin retention, delivering superior therapeutic benefits with optimal user experience.</p>
+                    <div class="tech-badge">Breakthrough Science</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 md:py-24 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800">Get in Touch</h2>
-            <p class="mt-4 text-lg text-center text-gray-600 max-w-2xl mx-auto">
-                We are actively seeking strategic partners for licensing opportunities and collaborative research.
-            </p>
-            <div class="mt-12 max-w-lg mx-auto bg-white p-8 rounded-3xl shadow-xl">
-                <form action="#" method="POST" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                        <input type="text" name="name" id="name" autocomplete="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-150">
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Partner With Innovation</h2>
+            <p class="contact-subtitle">Join the future of cosmetic science</p>
+            
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" required>
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                        <input type="email" name="email" id="email" autocomplete="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-150">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required>
                     </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-150"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-lg text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Partnership Interest</label>
+                    <select>
+                        <option>Licensing Opportunities</option>
+                        <option>Research Collaboration</option>
+                        <option>Investment Discussion</option>
+                        <option>Strategic Partnership</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Tell us about your interest in QAxion's technology..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Begin Partnership Discussion</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-8 mt-12 rounded-t-3xl shadow-inner">
-        <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
-            <p>&copy; 2025 Quelle BioSciences Inc. All Rights Reserved.</p>
-            <div class="mt-4 space-x-4">
-                <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition duration-300">Terms of Use</a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">Q</div>
+                    <div>
+                        <div class="logo-text">QAxion Biosciences</div>
+                        <div style="font-size: 0.8rem; color: #64748b;">The Source of Skincare Innovation</div>
+                    </div>
+                </div>
+                <div class="footer-text">
+                    © 2025 QAxion Biosciences. All rights reserved.
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #64748b; font-style: italic;">
+                "We are the spring from which future skincare flows"
             </div>
         </div>
     </footer>
 
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
